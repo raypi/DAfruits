@@ -22,7 +22,7 @@
                             <img *ngSwitchDefault src="./assets/img/stars/star-empty.svg" alt="Leerer Stern" srcset="">
                           </ng-container>
                         </ng-container>
-                        <p [ngStyle]="{'background-color':  item.stars > 3 ? fontColorGood : fontColorBad}" >({{item.stars}})</p>
+                        <p [ngClass]="{'fontColorBad': item.stars < 3, 'fontColorGood': item.stars >= 3 }" >({{item.stars}})</p>
                       </div>
                       
 
