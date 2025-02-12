@@ -1,5 +1,5 @@
 <div class="fruitlist_content">
-    @for(item of fruitlist; track item.name){
+    @for(item of fruitlist; track item.name; let index = $index){
 
 
         <section class="singleFruitBox">
@@ -11,7 +11,7 @@
                 }
             </div>
             <div>
-                <h2> <app-singlefruit></app-singlefruit> {{item.name}}</h2>
+                <h2> <app-singlefruit [fruitnumber]="index+1"> </app-singlefruit> {{item.name}}</h2>
                 <div>
                     <p><b>Bewertung:</b></p>
                     <div>
