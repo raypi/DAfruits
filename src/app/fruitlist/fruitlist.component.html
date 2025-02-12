@@ -4,10 +4,10 @@
 
         <section class="singleFruitBox">
             <div>
-                @if(item.stars < 3){
+                @if(item.stars < 5){
                     <img src="./assets/img/fruits/{{item.img}}" alt="" srcset="">
                 } @else {
-                    bild fehlt
+                    
                 }
             </div>
             <div>
@@ -15,6 +15,18 @@
                 <div>
                     <p><b>Bewertung:</b></p>
                     <div>
+                        <ng-container *ngFor="let count of [1, 2, 3, 4, 5]">
+                          <ng-container [ngSwitch]="item.stars >= count ? 'full' : (item.stars >= count - 0.5 ? 'half' : 'empty')">
+                            <img *ngSwitchCase="'full'" src="./assets/img/stars/star.svg" alt="Voller Stern" srcset="">
+                            <img *ngSwitchCase="'half'" src="./assets/img/stars/star-half.svg" alt="Halber Stern" srcset="">
+                            <img *ngSwitchDefault src="./assets/img/stars/star-empty.svg" alt="Leerer Stern" srcset="">
+                          </ng-container>
+                        </ng-container>
+                        <p>({{item.stars}})</p>
+                      </div>
+                      
+
+                    <!-- <div>
 
                         @for(count of [1, 2, 3, 4, 5]; track fruitlist){
                             @if(item.stars >= count){
@@ -26,10 +38,11 @@
                             }
 
                         }
+                      
 
     
                         <p>({{item.stars}})</p>
-                    </div>
+                    </div> -->
                 </div>
                 <div><b>Art:</b><br>{{item.genus}}</div>
                 <div><b>Beschreibung:</b><br>{{item.description}}</div>
