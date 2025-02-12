@@ -4,7 +4,11 @@
 
         <section class="singleFruitBox">
             <div>
-                <img src="./assets/img/fruits/{{item.img}}" alt="" srcset="">
+                @if(item.stars < 3){
+                    <img src="./assets/img/fruits/{{item.img}}" alt="" srcset="">
+                } @else {
+                    bild fehlt
+                }
             </div>
             <div>
                 <h2> {{item.name}}</h2>
