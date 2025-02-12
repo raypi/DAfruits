@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { compileNgModule } from '@angular/compiler';
 import { Component } from '@angular/core';
+import { SinglefruitComponent } from './singlefruit/singlefruit.component';
 
 @Component({
   selector: 'app-fruitlist',
