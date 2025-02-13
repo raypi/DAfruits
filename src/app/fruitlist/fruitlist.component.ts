@@ -15,8 +15,8 @@ export class FruitlistComponent {
   fontColorGood = 'green';
   fontColorBad = 'red';
 
-  numLog(index:number){
-    console.log(index)
+  nameLog(name: string){
+    console.log(name)
   }
 
   fruitlist = [
